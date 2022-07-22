@@ -8,8 +8,8 @@ export const options = {
 };
 
 const AWS_CREDS = {
-  accessKeyId: "AKIARG4ZR2SR5ZCU5LQU",
-  secretAccessKey: "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",
+  accessKeyId: "",
+  secretAccessKey: "",
 };
 
 export default function () {
