@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  k6:
+    image: grafana/k6
+    container_name: k6
+    entrypoint: k6 run /usr/k6/scenarios/sqs.js
+    tty: true
+    volumes:
+      - ./scenarios:/usr/k6/scenarios
+      - ./utils:/usr/k6/utils

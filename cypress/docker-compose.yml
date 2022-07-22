@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  cypress:
+    image: cypress/included:10.3.0
+    container_name: cypress
+    entrypoint: cypress open --project /usr/cypress
+    tty: true
+    working_dir: /usr/cypress
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./scenarios:/usr/cypress/cypress/e2e
+      - ./cypress.config.js:/usr/cypress/cypress.config.js
+      - ./support-e2e-default.js:/usr/cypress/cypress/support/e2e.js
+      - ./commands-e2e-default.js:/usr/cypress/cypress/support/commands.js
+      - ./fixture-default.json:/usr/cypress/cypress/fixtures/example.json
